@@ -1,0 +1,25 @@
+{
+  "name": "turtledove-js-api",
+  "version": "1.0.0",
+  "description": "Package allowing easy integration of ad-partner with turtledove.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dervan/turtledove-js-api.git"
+  },
+  "author": "Michał Jagielski <michal@jagielski.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dervan/turtledove-js-api/issues"
+  },
+  "homepage": "https://github.com/dervan/turtledove-js-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "cors": "^2.8.5"
+  }
+}
