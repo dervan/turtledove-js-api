@@ -25,14 +25,23 @@ export class InterestGroupAd extends Ad {
 }
 
 export class ProductLevelInterestGroupAd extends InterestGroupAd {
-  constructor (id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, productsCount, adPartner) {
+  constructor (id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, productsOwner, productsCount, adPartner) {
     super(id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, adPartner)
     this.productsCount = productsCount // States how many products have to be provided to ad to render it.
+    this.productsOwner = productsOwner // Have to be fixed because products are tigthly coupled with IG owner.
   }
 }
 
 export class ContextualAd extends Ad {
   constructor (id, iframeContent, adPartner) {
     super(id, iframeContent, 'contextual', adPartner)
+  }
+}
+
+export class Product {
+  constructor (owner, productId, iframeContent) {
+    this.owner = owner
+    this.productId = productId
+    this.iframeContent = iframeContent
   }
 }
