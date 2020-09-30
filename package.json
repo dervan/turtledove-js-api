@@ -1,6 +1,6 @@
 {
   "name": "turtledove-js-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Package allowing easy integration of ad-partner with turtledove.js",
   "main": "index.js",
   "type": "module",

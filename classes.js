@@ -25,9 +25,10 @@ export class InterestGroupAd extends Ad {
 }
 
 export class ProductLevelInterestGroupAd extends InterestGroupAd {
-  constructor (id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, productsOwner, productsCount, adPartner) {
+  constructor (id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, productsOwner, minProductsCount, productsCount, adPartner) {
     super(id, groupName, iframeContent, interestGroupSignals, bidFunctionSrc, adPartner)
-    this.productsCount = productsCount // States how many products have to be provided to ad to render it.
+    this.minProductsCount = minProductsCount || productsCount // States how many products have to be provided to ad to render it.
+    this.productsCount = productsCount // States how many products this ad wants to get (it may get any number between minProductsCount and productsCount)
     this.productsOwner = productsOwner // Have to be fixed because products are tigthly coupled with IG owner.
   }
 }

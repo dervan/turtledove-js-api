@@ -20,19 +20,19 @@ export function generateAdNetworkApp (fetchAdsMethod, fetchContextualBidMethod, 
   return app
 }
 
-export function generateAdNetworkAppAsync (fetchAdsMethod, fetchContextualBidMethod, fetchProductsMethod) {
+export function generateAdNetworkAppAsync (fetchAdsMethod, fetchContextualBidMethod, fetchProductMethod) {
   const app = express()
   app.use(cors())
   app.use(bodyParser.json())
   app.get('/fetch-ads', async (req, res) => {
     res.json(await fetchAdsMethod(decodeURIComponent(req.query.interest_group)))
   })
-  if (fetchProductsMethod !== undefined) {
-    app.get('/fetch-products', async (req, res) => {
-      res.json(await fetchProductsMethod(decodeURIComponent(req.query.owner), decodeURIComponent(req.query.product)))
+  if (fetchProductMethod !== undefined) {
+    app.get('/fetch-product', async (req, res) => {
+      res.json(await fetchProductMethod(decodeURIComponent(req.query.owner), decodeURIComponent(req.query.product)))
     })
   } else {
-    app.get('/fetch-products', (req, res) => res.status(404).send('Not found'))
+    app.get('/fetch-product', (req, res) => res.status(404).send('Not found'))
   }
   app.post('/fetch-contextual-bid', async (req, res) => res.json(await fetchContextualBidMethod(req.body)))
   return app
