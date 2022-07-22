@@ -1,3 +1,6 @@
+# This repository is archived
+Now, as [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md) experiment is live, we don't need to simulate TURTLEDOVE.  Additionally, with shared storage partitioning based on the toplevel site, the proposed demo does not work like expected. Because of that, there is no need for keeping this repository alive.
+
 # Goal
 This repository contains classes and functions that can simplify creating  node.js ad network applications for bidding in the TURTLEDOVE system. It is written for our js simulation of TURTLEDOVE. More information about it may be found in main repository:
 
